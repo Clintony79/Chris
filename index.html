@@ -1,0 +1,441 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = [
+    ':root{',
+    '--bg:#020203;',
+    '--card:#111314;',
+    '--text:#d7f3f5;',
+    '--muted:#7d9799;',
+    '--accent:#d7f3f5;',
+    '--accent-soft:rgba(215,243,245,.12);',
+    '--border:rgba(215,243,245,.14);',
+    '}',
+    'html{scroll-behavior:smooth;}',
+    'body{margin:0;background:var(--bg);color:var(--text);font-family:"Archivo",sans-serif;-webkit-font-smoothing:antialiased;}',
+    '.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}',
+    '.reveal.in{opacity:1;transform:translateY(0);}',
+    '.hairline{border-color:var(--border);}',
+    '.svc-card{transition:transform .3s ease,border-color .3s ease,background .3s ease;}',
+    '.svc-card:hover{transform:translateY(-4px);border-color:var(--accent);background:rgba(215,243,245,.04);}',
+    '.tyre-row{transition:background .2s ease;}',
+    '.tyre-row:hover{background:rgba(215,243,245,.05);}',
+    '.nav-link{position:relative;}',
+    '.nav-link::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--accent);transition:width .3s ease;}',
+    '.nav-link:hover::after{width:100%;}',
+    '.btn-primary{background:var(--accent);color:#020203;font-weight:500;transition:opacity .2s ease,transform .2s ease;}',
+    '.btn-primary:hover{opacity:.9;transform:translateY(-1px);}',
+    '.btn-ghost{border:1px solid var(--border);color:var(--text);transition:border-color .2s ease,background .2s ease;}',
+    '.btn-ghost:hover{border-color:var(--accent);background:var(--accent-soft);}',
+    'input,select,textarea{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:12px 14px;font-size:15px;width:100%;outline:none;transition:border-color .2s ease;box-sizing:border-box;}',
+    'input:focus,select:focus,textarea:focus{border-color:var(--accent);}',
+    'select option{background:#111314;color:#d7f3f5;}',
+    '::placeholder{color:var(--muted);}',
+    '.chip{border:1px solid var(--border);color:var(--muted);transition:all .2s ease;cursor:pointer;}',
+    '.chip.active{border-color:var(--accent);color:var(--text);background:var(--accent-soft);}',
+    '.time-slot{border:1px solid var(--border);color:var(--text);transition:all .2s ease;cursor:pointer;}',
+    '.time-slot:hover{border-color:var(--accent);}',
+    '.time-slot.active{background:var(--accent);color:#020203;border-color:var(--accent);}',
+    '.parallax-layer{will-change:transform;}',
+    '.grid-bg{background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.35;}',
+    '@media (max-width:640px){.hero-display{font-size:52px !important;line-height:1 !important;}}'
+  ].join('');
+  document.head.appendChild(s);
+})();
+</script>
+<head>
+<title>Chris Motors — MOT, Servicing & Tyres | Local Garage, London</title>
+<meta name="description" content="Local UK garage offering MOT testing, car servicing, tyre fitting, brakes, exhausts and diagnostics. Book online 24/7, transparent pricing, same-day appointments.">
+<meta name="keywords" content="MOT, tyres, car servicing, mechanic, brakes, exhaust, battery, garage, London, UK, book MOT online, tyre fitting">
+</head>
+<div style="background-color:transparent;box-sizing:border-box;">
+<div style="background:var(--bg);color:var(--text);min-height:100%;">
+
+<!-- ============ STICKY NAV ============ -->
+<nav style="position:sticky;top:0;z-index:50;background:rgba(2,2,3,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <a href="#top" style="font-weight:500;font-size:18px;letter-spacing:.02em;color:var(--text);text-decoration:none;">CHRIS&nbsp;MOTORS<span style="color:var(--muted);font-weight:300;"> · est. local</span></a>
+    <div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap;">
+      <a href="#services" class="nav-link" style="color:var(--muted);font-size:14px;text-decoration:none;">Services</a>
+      <a href="#mot" class="nav-link" style="color:var(--muted);font-size:14px;text-decoration:none;">MOT</a>
+      <a href="#tyres" class="nav-link" style="color:var(--muted);font-size:14px;text-decoration:none;">Tyres</a>
+      <a href="#book" class="nav-link" style="color:var(--muted);font-size:14px;text-decoration:none;">Book</a>
+      <a href="#contact" class="nav-link" style="color:var(--muted);font-size:14px;text-decoration:none;">Contact</a>
+      <a href="#book" class="btn-primary" style="padding:10px 20px;border-radius:8px;font-size:14px;text-decoration:none;">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="top" style="position:relative;overflow:hidden;padding:120px 24px 140px;">
+  <div class="parallax-layer grid-bg" id="parallax" style="position:absolute;inset:0;pointer-events:none;"></div>
+  <div style="position:absolute;top:-200px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(215,243,245,.08),transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;">
+    <p class="reveal" style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;">Independent Garage · London · UK</p>
+    <h1 class="reveal hero-display" style="font-weight:300;font-size:134px;line-height:.86;letter-spacing:-.02em;margin:0 0 32px;">Your car,<br>in safe<br><span style="font-style:italic;">honest</span> hands.</h1>
+    <p class="reveal" style="font-weight:300;font-size:20px;line-height:1.5;color:var(--muted);max-width:560px;margin:0 0 44px;">MOT testing, full servicing, tyre fitting and all mechanical repairs — fixed pricing, no surprises, same-day slots. Book online in under a minute.</p>
+    <div class="reveal" style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="#book" class="btn-primary" style="padding:16px 32px;border-radius:10px;font-size:16px;text-decoration:none;">Book an Appointment</a>
+      <a href="#tyres" class="btn-ghost" style="padding:16px 32px;border-radius:10px;font-size:16px;text-decoration:none;">View Tyre Stock</a>
+    </div>
+    <div class="reveal" style="display:flex;gap:48px;margin-top:72px;flex-wrap:wrap;">
+      <div><div style="font-size:36px;font-weight:300;">15+</div><div style="font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;">Years trading</div></div>
+      <div><div style="font-size:36px;font-weight:300;">4.9<span style="color:var(--muted);">/5</span></div><div style="font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;">Customer rating</div></div>
+      <div><div style="font-size:36px;font-weight:300;">Same<br>day</div><div style="font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;">MOT & tyres</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" style="border-top:1px solid var(--border);padding:100px 24px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:56px;">
+      <div>
+        <p style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;">What we do</p>
+        <h2 style="font-weight:300;font-size:40px;line-height:1.06;margin:0;">Everything under<br>one roof.</h2>
+      </div>
+      <p style="color:var(--muted);font-size:15px;max-width:340px;line-height:1.6;margin:0;">From a £2 bulb to a full engine rebuild — if it rolls in, we fix it. All work guaranteed for 12 months.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">MOT Testing</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Class 4 & 7 MOTs at the DVSA maximum price. Free retest within 10 days.</p>
+      </div>
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5 2.5-2.5z"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">Full Servicing</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Interim, full and major service packages. OEM-spec parts, stamped service book.</p>
+      </div>
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">Tyres & Fitting</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Budget to premium brands in stock. Fitting, balancing and valves included in price.</p>
+      </div>
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">Brakes & Exhaust</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Pads, discs, callipers and full exhaust systems. Free brake inspection.</p>
+      </div>
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h.01M11 9h.01M15 9h.01M7 13h10"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">Diagnostics</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Latest dealer-level diagnostic equipment. Engine warning light? We'll find it.</p>
+      </div>
+      <div class="svc-card reveal" style="background:var(--card);padding:36px 28px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);margin-bottom:20px;"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 12h20"/></svg>
+        <h3 style="font-weight:400;font-size:20px;margin:0 0 10px;">Batteries & Clutches</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;">Free battery test while you wait. Clutch replacements with 2-year warranty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOT & SERVICING ============ -->
+<section id="mot" style="border-top:1px solid var(--border);padding:100px 24px;background:var(--card);">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:64px;">
+    <div class="reveal">
+      <p style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;">MOT & Servicing</p>
+      <h2 style="font-weight:300;font-size:40px;line-height:1.06;margin:0 0 24px;">Fair prices.<br>No hidden extras.</h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;margin:0 0 28px;">Our MOT price is the legal maximum set by the DVSA — we never charge more. Book your MOT up to one calendar month before the expiry date and keep your original renewal date.</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;">
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;"><span style="color:var(--accent);font-weight:500;">+</span><span style="color:var(--muted);">Free retest within 10 working days</span></li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;"><span style="color:var(--accent);font-weight:500;">+</span><span style="color:var(--muted);">Free MOT reminder by text or email</span></li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;"><span style="color:var(--accent);font-weight:500;">+</span><span style="color:var(--muted);">While-you-wait appointments available</span></li>
+        <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;"><span style="color:var(--accent);font-weight:500;">+</span><span style="color:var(--muted);">Service stamped in your book — protects resale value</span></li>
+      </ul>
+    </div>
+    <div class="reveal" style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">MOT Class 4 (cars)</span><span style="font-size:24px;font-weight:300;">£54.85</span></div>
+      <div style="padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">MOT Class 7 (vans)</span><span style="font-size:24px;font-weight:300;">£58.60</span></div>
+      <div style="padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">Interim Service</span><span style="font-size:24px;font-weight:300;">from £89</span></div>
+      <div style="padding:24px 28px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">Full Service</span><span style="font-size:24px;font-weight:300;">from £169</span></div>
+      <div style="padding:24px 28px;display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);">MOT + Full Service</span><span style="font-size:24px;font-weight:300;">from £209</span></div>
+      <div style="padding:16px 28px;background:var(--accent-soft);border-top:1px solid var(--border);"><p style="font-size:12px;color:var(--muted);margin:0;line-height:1.5;">MOT fees shown are the DVSA maximum test fees. Service prices are starting points — exact quote given before work begins.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TYRES (live stock + filter) ============ -->
+<section id="tyres" style="border-top:1px solid var(--border);padding:100px 24px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="margin-bottom:48px;">
+      <p style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;">Live stock</p>
+      <h2 style="font-weight:300;font-size:40px;line-height:1.06;margin:0 0 16px;">Tyres in stock today.</h2>
+      <p style="color:var(--muted);font-size:15px;max-width:520px;line-height:1.6;margin:0;">Filter by size or brand. Price includes fitting, balancing, new valve and disposal of your old tyre.</p>
+    </div>
+    <div class="reveal" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;align-items:center;">
+      <input id="tyreSearch" type="text" placeholder="Search size, e.g. 205/55 R16 or brand…" style="flex:1;min-width:220px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="chip active" data-brand="all" style="padding:10px 18px;border-radius:8px;font-size:13px;background:transparent;">All</button>
+        <button class="chip" data-brand="Budget" style="padding:10px 18px;border-radius:8px;font-size:13px;background:transparent;">Budget</button>
+        <button class="chip" data-brand="Mid-range" style="padding:10px 18px;border-radius:8px;font-size:13px;background:transparent;">Mid-range</button>
+        <button class="chip" data-brand="Premium" style="padding:10px 18px;border-radius:8px;font-size:13px;background:transparent;">Premium</button>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px 24px;border-bottom:1px solid var(--border);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);">
+        <span>Tyre · Size</span><span>Rating</span><span>Stock</span><span style="text-align:right;">Price (fitted)</span>
+      </div>
+      <div id="tyreList"></div>
+    </div>
+    <p class="reveal" style="font-size:12px;color:var(--muted);margin-top:16px;">Sample stock list — replace with your live inventory. Wet-grip / fuel-efficiency labels shown per EU tyre rating.</p>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="book" style="border-top:1px solid var(--border);padding:100px 24px;background:var(--card);">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:64px;">
+    <div class="reveal">
+      <p style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;">Book online</p>
+      <h2 style="font-weight:300;font-size:40px;line-height:1.06;margin:0 0 24px;">Pick a slot.<br>We'll do the rest.</h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;margin:0 0 32px;">Your booking is stored locally and confirmed instantly. We'll call to confirm within one working hour during opening times.</p>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div><div style="font-size:15px;font-weight:500;">Mon–Fri · 8:00–18:00</div><div style="font-size:13px;color:var(--muted);">Sat · 8:30–14:00 · Sun closed</div></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent);flex-shrink:0;margin-top:2px;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><div><div style="font-size:15px;font-weight:500;">020 7946 0958</div><div style="font-size:13px;color:var(--muted);">Prefer to talk? Call us directly.</div></div></div>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--border);border-radius:12px;padding:32px;background:var(--bg);">
+      <form id="bookingForm" style="display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <label style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px;">Service</label>
+          <select id="bService" required>
+            <option value="">Select a service…</option>
+            <option>MOT Test (Class 4)</option>
+            <option>MOT Test (Class 7)</option>
+            <option>Full Service</option>
+            <option>Interim Service</option>
+            <option>Tyre Fitting (per tyre)</option>
+            <option>Brake Inspection / Repair</option>
+            <option>Diagnostics</option>
+            <option>Other / Not sure</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div>
+            <label style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px;">Date</label>
+            <input id="bDate" type="date" required>
+          </div>
+          <div>
+            <label style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px;">Vehicle reg</label>
+            <input id="bReg" type="text" placeholder="AB12 CDE" required style="text-transform:uppercase;">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px;">Preferred time</label>
+          <div id="timeSlots" style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">08:30</button>
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">10:00</button>
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">11:30</button>
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">13:00</button>
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">14:30</button>
+            <button type="button" class="time-slot" style="padding:10px 14px;border-radius:8px;font-size:13px;background:transparent;">16:00</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <input id="bName" type="text" placeholder="Full name" required>
+          <input id="bPhone" type="tel" placeholder="UK mobile" required>
+        </div>
+        <input id="bEmail" type="email" placeholder="Email (for confirmation)">
+        <textarea id="bNotes" rows="2" placeholder="Anything we should know? (optional)"></textarea>
+        <button type="submit" class="btn-primary" style="padding:16px;border-radius:10px;font-size:16px;border:none;cursor:pointer;">Confirm Booking</button>
+      </form>
+      <div id="bookingConfirm" style="display:none;margin-top:20px;padding:20px;border:1px solid var(--accent);border-radius:10px;background:var(--accent-soft);">
+        <p style="font-weight:500;margin:0 0 8px;font-size:16px;">Booking received — thank you.</p>
+        <p id="confirmText" style="color:var(--muted);font-size:14px;line-height:1.6;margin:0;"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / ABOUT ============ -->
+<section id="contact" style="border-top:1px solid var(--border);padding:100px 24px;">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;">
+    <div class="reveal">
+      <p style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;">Find us</p>
+      <h2 style="font-weight:300;font-size:40px;line-height:1.06;margin:0 0 24px;">Local, by choice.</h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;margin:0 0 24px;">Family-run independent garage. We've served the same high street for 15 years — most of our customers come on recommendation.</p>
+      <div style="border:1px solid var(--border);border-radius:12px;padding:24px;line-height:1.8;font-size:15px;">
+        <div style="font-weight:500;margin-bottom:8px;">Chris Motors</div>
+        <div style="color:var(--muted);">142 High Street</div>
+        <div style="color:var(--muted);">London, N1 2AB</div>
+        <div style="color:var(--muted);margin-top:8px;">020 7946 0958</div>
+        <div style="color:var(--muted);">hello@chrismotors.co.uk</div>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--border);border-radius:12px;padding:32px;">
+      <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;">Opening hours</p>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;">
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px;"><span>Monday – Friday</span><span style="color:var(--muted);">08:00 – 18:00</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px;"><span>Saturday</span><span style="color:var(--muted);">08:30 – 14:00</span></div>
+        <div style="display:flex;justify-content:space-between;"><span>Sunday</span><span style="color:var(--muted);">Closed</span></div>
+        <div style="display:flex;justify-content:space-between;"><span>Bank Holidays</span><span style="color:var(--muted);">Closed</span></div>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--border);border-radius:12px;padding:32px;background:var(--card);">
+      <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 20px;">Why customers stay</p>
+      <div style="font-size:15px;line-height:1.7;color:var(--muted);">
+        <p style="margin:0 0 16px;">"Booked an MOT online at 11pm, was in the bay by 9am. Texted me a photo of the one advisory — no pressure to fix it." <span style="color:var(--text);">— Sarah K.</span></p>
+        <p style="margin:0;">"Four tyres fitted for less than the big chain quoted for two. Same brand, same day." <span style="color:var(--text);">— David M.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVERTED FOOTER (ice-cyan) ============ -->
+<footer style="background:var(--accent);color:#020203;padding:80px 24px 40px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px;margin-bottom:64px;">
+      <div>
+        <div style="font-weight:500;font-size:22px;margin-bottom:12px;">Chris Motors</div>
+        <p style="font-size:14px;line-height:1.7;opacity:.7;margin:0;max-width:260px;">Independent garage. MOT, servicing, tyres and repairs. Honest pricing since day one.</p>
+      </div>
+      <div>
+        <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin:0 0 16px;">Services</p>
+        <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <a href="#mot" style="color:#020203;text-decoration:none;opacity:.85;">MOT Testing</a>
+          <a href="#services" style="color:#020203;text-decoration:none;opacity:.85;">Servicing</a>
+          <a href="#tyres" style="color:#020203;text-decoration:none;opacity:.85;">Tyres</a>
+          <a href="#services" style="color:#020203;text-decoration:none;opacity:.85;">Brakes & Exhaust</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin:0 0 16px;">Visit</p>
+        <div style="font-size:14px;line-height:1.8;opacity:.85;">142 High Street<br>London, N1 2AB<br>020 7946 0958</div>
+      </div>
+      <div>
+        <p style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.6;margin:0 0 16px;">Book</p>
+        <a href="#book" style="display:inline-block;background:#020203;color:var(--accent);padding:14px 26px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;">Book online now</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(2,2,3,.2);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;opacity:.6;">
+      <span>© 2026 Chris Motors. All rights reserved.</span>
+      <span>Privacy · GDPR compliant · Data stored in the UK only</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+
+<script>
+(function(){
+  // ---- Scroll reveal (interactive scrolling) ----
+  try {
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  } catch(e){}
+
+  // ---- Subtle parallax on hero grid ----
+  try {
+    var layer = document.getElementById('parallax');
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          if(layer){ layer.style.transform = 'translateY(' + (window.scrollY * 0.15) + 'px)'; }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, {passive:true});
+  } catch(e){}
+
+  // ---- Tyre stock data + filter ----
+  try {
+    var tyres = [
+      {brand:'Budget', name:'Rapid P309', size:'195/65 R15', rating:'C / B', stock:12, price:49},
+      {brand:'Budget', name:'Tracmax X-Privilo', size:'205/55 R16', rating:'C / C', stock:8, price:54},
+      {brand:'Mid-range', name:'Goodyear EfficientGrip', size:'205/55 R16', rating:'B / A', stock:6, price:89},
+      {brand:'Mid-range', name:'Continental EcoContact 6', size:'215/55 R17', rating:'B / A', stock:4, price:112},
+      {brand:'Premium', name:'Michelin CrossClimate 2', size:'205/55 R16', rating:'A / A', stock:10, price:134},
+      {brand:'Premium', name:'Pirelli Cinturato P7', size:'225/45 R17', rating:'B / A', stock:5, price:148},
+      {brand:'Premium', name:'Bridgestone Turanza T005', size:'225/40 R18', rating:'A / B', stock:3, price:162},
+      {brand:'Mid-range', name:'Dunlop Sport BluResponse', size:'195/55 R16', rating:'C / B', stock:7, price:78}
+    ];
+    var list = document.getElementById('tyreList');
+    var search = document.getElementById('tyreSearch');
+    var activeBrand = 'all';
+    function render(){
+      var q = (search.value||'').toLowerCase().trim();
+      var html = '';
+      var shown = 0;
+      tyres.forEach(function(t){
+        if(activeBrand!=='all' && t.brand!==activeBrand) return;
+        if(q && (t.name+' '+t.size+' '+t.brand).toLowerCase().indexOf(q)===-1) return;
+        shown++;
+        var stockColor = t.stock<=3 ? 'var(--accent)' : 'var(--muted)';
+        html += '<div class="tyre-row" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:18px 24px;border-bottom:1px solid var(--border);align-items:center;">'
+          + '<div><div style="font-weight:400;font-size:15px;">'+t.name+'</div><div style="font-size:12px;color:var(--muted);margin-top:4px;">'+t.size+' · '+t.brand+'</div></div>'
+          + '<div style="font-size:13px;color:var(--muted);">'+t.rating+'</div>'
+          + '<div style="font-size:13px;color:'+stockColor+';">'+t.stock+' in stock</div>'
+          + '<div style="text-align:right;font-size:18px;font-weight:300;">£'+t.price+'</div>'
+          + '</div>';
+      });
+      if(shown===0){ html = '<div style="padding:32px 24px;text-align:center;color:var(--muted);font-size:14px;">No tyres match your filter — call us, we can order anything within 24 hours.</div>'; }
+      list.innerHTML = html;
+    }
+    render();
+    search.addEventListener('input', render);
+    document.querySelectorAll('.chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        document.querySelectorAll('.chip').forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        activeBrand = chip.getAttribute('data-brand');
+        render();
+      });
+    });
+  } catch(e){}
+
+  // ---- Time slot selection ----
+  try {
+    var selectedTime = '';
+    document.querySelectorAll('.time-slot').forEach(function(slot){
+      slot.addEventListener('click', function(){
+        document.querySelectorAll('.time-slot').forEach(function(s){ s.classList.remove('active'); });
+        slot.classList.add('active');
+        selectedTime = slot.textContent;
+      });
+    });
+  } catch(e){}
+
+  // ---- Booking form submit (local storage only — UK/local, no external server) ----
+  try {
+    var form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var svc = document.getElementById('bService').value;
+      var date = document.getElementById('bDate').value;
+      var reg = (document.getElementById('bReg').value||'').toUpperCase();
+      var name = document.getElementById('bName').value;
+      var phone = document.getElementById('bPhone').value;
+      var booking = {service:svc, date:date, time:selectedTime||'any', reg:reg, name:name, phone:phone, created:new Date().toISOString()};
+      try {
+        var all = JSON.parse(localStorage.getItem('cm_bookings')||'[]');
+        all.push(booking);
+        localStorage.setItem('cm_bookings', JSON.stringify(all));
+      } catch(e){}
+      var niceDate = date ? new Date(date+'T00:00:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) : 'your chosen date';
+      document.getElementById('confirmText').textContent =
+        'Thanks, '+name.split(' ')[0]+'. '+svc+' for '+reg+' on '+niceDate+(selectedTime?' at '+selectedTime:'')+'. Saved locally — we will call '+phone+' to confirm within one working hour.';
+      document.getElementById('bookingConfirm').style.display = 'block';
+      form.style.display = 'none';
+    });
+    // Set min date to today
+    var today = new Date().toISOString().split('T')[0];
+    var dateInput = document.getElementById('bDate');
+    if(dateInput){ dateInput.setAttribute('min', today); }
+  } catch(e){}
+})();
+</script>
+</html>
