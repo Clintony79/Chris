@@ -1,0 +1,375 @@
+!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO: edit title, description and keywords -->
+<title>Your Garage Name | MOT, Servicing & Tyres</title>
+<meta name="description" content="Local MOT testing, car servicing, repairs and tyres in Your Town. Book online. Class 4 and 7 MOTs, fixed prices, no hidden costs.">
+<meta name="keywords" content="MOT Your Town, car service, tyres, brakes, exhausts, local garage UK">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--tar:#1c2024;--tar2:#2a3036;--paper:#f3f4f1;--white:#fff;--green:#1f7a4d;--yellow:#f2c230;--ink:#1c2024;--mute:#5d666e;--line:#d9dcd6;
+--head:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Barlow",system-ui,Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root{--paper:#15181b;--white:#1f2428;--ink:#eef0ec;--mute:#a0a9b0;--line:#363d43}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:17px/1.6 var(--body);color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:var(--head);line-height:1.05;margin:0 0 .5em}
+h1{font-size:clamp(2.6rem,9vw,5rem)}h2{font-size:clamp(2rem,6vw,3rem)}h3{font-size:1.5rem}
+a{color:inherit}.wrap{max-width:1040px;margin:auto;padding:0 20px}
+section{padding:64px 0}.page{display:none}.page.on{display:block}
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:var(--tar);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:700 1.6rem var(--head);text-decoration:none;color:var(--yellow)}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a.l{display:block;padding:8px 11px;text-decoration:none;font-weight:500;border-radius:6px}
+nav a.l:hover,nav a.l.cur{background:var(--tar2)}
+#burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem}
+@media(max-width:860px){#burger{display:block}nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--tar);flex-direction:column;padding:8px 20px 16px}nav ul.open{display:flex}}
+/* BUTTONS */
+.btn{display:inline-block;background:var(--yellow);color:#1c2024;font:700 1.15rem var(--head);padding:12px 26px;border:0;border-radius:6px;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}.btn.g{background:var(--green);color:#fff}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+/* HERO with parallax: replace the URL with your own photo */
+.hero{color:#fff;padding:90px 0 80px;background:linear-gradient(rgba(28,32,36,.82),rgba(28,32,36,.9)),url("https://placehold.co/1600x900/2a3036/2a3036") center/cover fixed}
+.hero p{max-width:34em;font-size:1.15rem;color:#d8dde0}
+.plate{display:flex;max-width:440px;border:3px solid #1c2024;border-radius:8px;overflow:hidden;background:var(--yellow);margin:26px 0 8px}
+.plate b{background:#1d4fa0;color:#fff;font:700 .8rem var(--head);width:44px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.plate input{flex:1;min-width:0;border:0;background:transparent;font:700 2rem var(--head);text-transform:uppercase;padding:10px 12px;color:#1c2024;letter-spacing:.06em}
+.plate input::placeholder{color:#7a6a20}
+.hint{font-size:.9rem;color:#b9c1c6;margin:0 0 22px}
+/* CARDS & GRIDS */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:22px}
+.price{font:700 1.9rem var(--head);color:var(--green)}
+table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line)}
+td,th{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}td:last-child,th:last-child{text-align:right;font-weight:600;white-space:nowrap}
+.scroll{overflow-x:auto}
+.dark{background:var(--tar);color:#fff}.dark .card{background:var(--tar2);border-color:#3b434a}
+.hours td:last-child{font-weight:500}
+.map{width:100%;height:300px;border:0;border-radius:8px;background:var(--line)}
+details{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px}summary{font-weight:600;cursor:pointer}
+/* FORMS */
+label{display:block;font-weight:600;margin:14px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:var(--white);color:var(--ink)}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.slot{width:auto;padding:9px 14px;cursor:pointer;font-weight:600}
+.slot.sel{background:var(--green);color:#fff;border-color:var(--green)}
+.slot:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.msg{padding:14px 16px;border-radius:6px;margin-top:16px;background:#e3f3ea;color:#145a37;display:none}.msg.err{background:#fbe5e3;color:#8a1f16}
+footer{background:var(--tar);color:#aab2b8;padding:32px 0;font-size:.95rem}
+/* SCROLL REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.hero{background-attachment:scroll}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#home">YOUR GARAGE</a>
+  <button id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <ul id="menu">
+    <li><a class="l" href="#home">Home</a></li><li><a class="l" href="#about">About</a></li>
+    <li><a class="l" href="#services">Services</a></li><li><a class="l" href="#mot">MOT &amp; Servicing</a></li>
+    <li><a class="l" href="#tyres">Tyres</a></li><li><a class="l" href="#contact">Contact</a></li>
+    <li><a class="btn" href="#book" style="padding:7px 18px">Book now</a></li>
+  </ul>
+</div></nav>
+
+<!-- ================= HOME ================= -->
+<main>
+<div class="page" id="p-home">
+  <header class="hero"><div class="wrap">
+    <h1>MOT, servicing and tyres. Booked in a minute.</h1>
+    <p>Independent local garage. Fixed prices, honest advice, and no work done without your say-so.</p>
+    <div class="plate"><b>GB</b><input id="heroReg" placeholder="YOUR REG" maxlength="8" aria-label="Vehicle registration"></div>
+    <p class="hint">Enter your registration to start a booking.</p>
+    <button class="btn" id="heroGo">Book now</button>
+  </div></header>
+  <section><div class="wrap">
+    <h2 class="rv">What we do</h2>
+    <div class="grid">
+      <div class="card rv"><h3>MOT testing</h3><p>Class 4 and Class 7. Free retest within 10 working days on the same fault list, at our garage.</p><a href="#mot">See prices</a></div>
+      <div class="card rv"><h3>Servicing and repairs</h3><p>Interim, full and manufacturer-equivalent services. Brakes, clutches, exhausts, batteries, diagnostics.</p><a href="#services">See prices</a></div>
+      <div class="card rv"><h3>Tyres</h3><p>Fitted and balanced the same day when in stock. Budget, mid-range and premium brands.</p><a href="#tyres">Check stock</a></div>
+    </div>
+  </div></section>
+  <section class="dark"><div class="wrap grid">
+    <div class="rv"><h2>Opening hours</h2>
+      <table class="hours" style="background:none;color:inherit"><tbody id="hoursHome"></tbody></table></div>
+    <div class="rv"><h2>Find us</h2>
+      <!-- Replace the address in the q= part of the URL -->
+      <iframe class="map" title="Map" loading="lazy" src="https://maps.google.com/maps?q=10+High+Street+Your+Town+UK&output=embed"></iframe></div>
+  </div></section>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="page" id="p-about"><section><div class="wrap">
+  <h1 class="rv">About us</h1>
+  <p class="rv" style="max-width:40em">We have been fixing cars in Your Town since 2005. [Replace this with your story: who started the garage, what you are proud of, and what customers can expect.]</p>
+  <h2 class="rv" style="margin-top:40px">The team</h2>
+  <div class="grid">
+    <div class="card rv"><h3>Name Surname</h3><p>Owner and MOT tester. 20 years in the trade.</p></div>
+    <div class="card rv"><h3>Name Surname</h3><p>Master technician. Diagnostics and electrics.</p></div>
+    <div class="card rv"><h3>Name Surname</h3><p>Tyre and service specialist.</p></div>
+  </div>
+  <h2 class="rv" style="margin-top:40px">Our values</h2>
+  <p class="rv">Fixed prices quoted before we start. We show you the old parts. We tell you what can wait.</p>
+  <h2 class="rv" style="margin-top:40px">What customers say</h2>
+  <div class="grid">
+    <div class="card rv"><p>“Quoted £20 less than the dealer and was done by lunch.” [Replace with a real review]</p><b>Customer name</b></div>
+    <div class="card rv"><p>“Explained exactly what needed doing and what didn't.” [Replace with a real review]</p><b>Customer name</b></div>
+  </div>
+</div></section></div>
+
+<!-- ================= SERVICES ================= -->
+<div class="page" id="p-services"><section><div class="wrap">
+  <h1 class="rv">Services and prices</h1>
+  <p class="rv">All prices include VAT and labour. Parts are extra where shown. We quote before we start.</p>
+  <div class="scroll rv"><table><thead><tr><th>Service</th><th>From</th></tr></thead><tbody id="svcTable"></tbody></table></div>
+  <p style="margin-top:24px"><a class="btn" href="#book">Book a service</a></p>
+</div></section></div>
+
+<!-- ================= MOT ================= -->
+<div class="page" id="p-mot"><section><div class="wrap">
+  <h1 class="rv">MOT and servicing</h1>
+  <div class="grid">
+    <div class="card rv"><h3>Class 4</h3><p>Cars, small vans, up to 8 passenger seats.</p><div class="price" data-price="mot4"></div></div>
+    <div class="card rv"><h3>Class 7</h3><p>Vans over 3,000kg up to 3,500kg.</p><div class="price" data-price="mot7"></div></div>
+    <div class="card rv"><h3>Retest</h3><p>Free if you leave the car with us for repair and we retest within 10 working days. Partial retest fee applies otherwise.</p><div class="price">Free / £<span data-v="retest"></span></div></div>
+  </div>
+  <h2 class="rv" style="margin-top:40px">What is checked</h2>
+  <p class="rv">Lights, steering, suspension, brakes, tyres and wheels, seat belts, windscreen and wipers, exhaust and emissions, horn, number plates, body condition and fuel system.</p>
+  <h2 class="rv" style="margin-top:40px">Service options</h2>
+  <div class="grid" id="serviceCards"></div>
+  <h2 class="rv" style="margin-top:40px">FAQs</h2>
+  <details><summary>How long does an MOT take?</summary><p>About 45 to 60 minutes. Wait in our lounge or drop off.</p></details>
+  <details><summary>Can I book my MOT early?</summary><p>You can test up to one month minus a day before expiry and keep the same renewal date.</p></details>
+  <details><summary>What if it fails?</summary><p>We give you a written list of faults and a fixed quote. See the retest policy above.</p></details>
+  <p><a class="btn" href="#book">Book an MOT</a></p>
+</div></section></div>
+
+<!-- ================= TYRES ================= -->
+<div class="page" id="p-tyres"><section><div class="wrap">
+  <h1 class="rv">Tyres</h1>
+  <p class="rv">Search by tyre size, found on the sidewall (for example 205/55R16), or enter your registration.</p>
+  <div class="card rv"><div class="grid">
+    <div><label for="tSize">Tyre size</label><input id="tSize" placeholder="205/55R16"></div>
+    <div><label for="tReg">Or registration</label><input id="tReg" placeholder="AB12 CDE" maxlength="8"></div>
+  </div><p style="margin-bottom:0"><button class="btn g" id="tGo">Search tyres</button></p>
+  <div class="msg" id="tMsg"></div></div>
+  <div class="scroll" style="margin-top:20px"><table><thead><tr><th>Brand and model</th><th>Size</th><th>In stock</th><th>Fitted price</th></tr></thead><tbody id="tBody"></tbody></table></div>
+  <p class="rv" id="fitNote"></p>
+</div></section></div>
+
+<!-- ================= BOOKING ================= -->
+<div class="page" id="p-book"><section><div class="wrap" style="max-width:640px">
+  <h1>Book online</h1>
+  <form id="bf" novalidate>
+    <label for="bSvc">Service</label><select id="bSvc"></select>
+    <label for="bDate">Date</label><input type="date" id="bDate">
+    <label>Time</label><div class="slots" id="slots"><span style="color:var(--mute)">Choose a date to see free times.</span></div>
+    <label for="bReg">Vehicle registration</label><input id="bReg" placeholder="AB12 CDE" maxlength="8" autocomplete="off">
+    <label for="bName">Full name</label><input id="bName" autocomplete="name">
+    <label for="bPhone">Mobile number</label><input id="bPhone" type="tel" placeholder="07123 456789" autocomplete="tel">
+    <label for="bEmail">Email</label><input id="bEmail" type="email" autocomplete="email">
+    <p style="margin-top:22px"><button class="btn g" type="submit">Confirm booking</button></p>
+    <div class="msg" id="bMsg" role="status"></div>
+  </form>
+</div></section></div>
+
+<!-- ================= CONTACT ================= -->
+<div class="page" id="p-contact"><section><div class="wrap">
+  <h1 class="rv">Contact us</h1>
+  <div class="grid">
+    <div class="rv"><h3>Visit</h3><p id="cAddr"></p>
+      <h3>Call or email</h3><p><a id="cTel" href="#"></a><br><a id="cMail" href="#"></a></p>
+      <h3>Opening hours</h3><table class="hours"><tbody id="hoursContact"></tbody></table></div>
+    <div class="rv"><iframe class="map" title="Map" loading="lazy" src="https://maps.google.com/maps?q=10+High+Street+Your+Town+UK&output=embed"></iframe>
+      <form id="cf" novalidate>
+        <label for="eName">Name</label><input id="eName">
+        <label for="eMail">Email</label><input id="eMail" type="email">
+        <label for="eMsg">Message</label><textarea id="eMsg" rows="4"></textarea>
+        <p><button class="btn g" type="submit">Send enquiry</button></p><div class="msg" id="cMsg"></div>
+      </form></div>
+  </div>
+</div></section></div>
+</main>
+
+<footer><div class="wrap"><span id="fName"></span> · <span id="fAddr"></span> · MOT station no. [XXXXXXX]<br>
+Booking details are stored in your browser on this device only until you connect a UK-hosted booking server (see comments in the code).</div></footer>
+
+<script>
+/* ============ 1. EDIT YOUR BUSINESS DETAILS HERE ============ */
+const BIZ = {
+  name:"Your Garage Name",
+  address:"10 High Street, Your Town, AB1 2CD",
+  phone:"01234 567890", email:"info@yourgarage.co.uk",
+  /* Opening hours by day number (0=Sun ... 6=Sat): [open, close] in 24h, or null if closed */
+  hours:{0:null,1:["08:30","17:30"],2:["08:30","17:30"],3:["08:30","17:30"],4:["08:30","17:30"],5:["08:30","17:30"],6:["09:00","13:00"]},
+  slotMinutes:30,         // length of each booking slot
+  bays:1,                 // how many cars you can take at the same time
+  /* Optional: URL of your own UK-hosted endpoint that emails confirmations and stores bookings.
+     Leave empty to use browser storage + a pre-filled email (mailto) fallback. */
+  bookingEndpoint:""
+};
+
+/* ============ 2. EDIT PRICES HERE (all in GBP, inc VAT) ============ */
+const PRICES = {mot4:54.85, mot7:57.30, retest:27.43, fit:15, balance:5};
+const SERVICES = [
+  {id:"mot4", name:"MOT – Class 4 (car)", price:PRICES.mot4, mins:60},
+  {id:"mot7", name:"MOT – Class 7 (van)", price:PRICES.mot7, mins:60},
+  {id:"interim", name:"Interim service", price:109, mins:90, desc:"Oil and filter, 30-point check. Every 6 months."},
+  {id:"full", name:"Full service", price:179, mins:120, desc:"Oil, oil, air and pollen filters, plugs check, 60-point check."},
+  {id:"brakes", name:"Brake pads and discs (per axle)", price:149, mins:120},
+  {id:"exhaust", name:"Exhaust repair or replacement", price:85, mins:90},
+  {id:"battery", name:"Battery test and fit", price:95, mins:30},
+  {id:"diag", name:"Diagnostics (fault code read)", price:45, mins:60},
+  {id:"clutch", name:"Clutch replacement", price:480, mins:240},
+  {id:"tyrefit", name:"Tyre fitting (booked fit)", price:PRICES.fit+PRICES.balance, mins:30}
+];
+
+/* ============ 3. TYRE STOCK (edit or replace with a UK-hosted JSON file) ============ */
+const TYRES = [
+  {brand:"Budget",   model:"Hifly HF201",       size:"205/55R16", stock:12, price:52},
+  {brand:"Mid-range",model:"Uniroyal RainExpert",size:"205/55R16", stock:8,  price:72},
+  {brand:"Premium",  model:"Michelin Primacy 4", size:"205/55R16", stock:4,  price:105},
+  {brand:"Budget",   model:"Landsail LS388",    size:"195/65R15", stock:10, price:48},
+  {brand:"Mid-range",model:"Continental EcoContact",size:"195/65R15",stock:6,price:76},
+  {brand:"Premium",  model:"Pirelli Cinturato P7",size:"225/45R17",stock:3, price:118},
+  {brand:"Mid-range",model:"Bridgestone Turanza",size:"225/45R17",stock:0, price:99},
+  {brand:"Budget",   model:"Nankang AS-2+",     size:"215/60R16", stock:7,  price:64}
+];
+/* Registration to tyre size lookup. To do live lookups, call the DVLA Vehicle Enquiry Service from your own UK server.
+   Example offline list: */
+const REG_SIZES = {"AB12CDE":"205/55R16"};
+
+/* ============ CODE BELOW: edit only if you know JavaScript ============ */
+const $=s=>document.querySelector(s), gbp=n=>"£"+Number(n).toFixed(2).replace(/\.00$/,"");
+const DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const fmtDate=d=>d.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+/* UK registration formats: current (AB12 CDE), prefix (A123 BCD), suffix (ABC 123D); loose check for private plates */
+const REG_RE=/^([A-Z]{2}[0-9]{2}[A-Z]{3}|[A-Z][0-9]{1,3}[A-Z]{3}|[A-Z]{3}[0-9]{1,3}[A-Z]|[A-Z0-9]{2,7})$/;
+const cleanReg=v=>v.toUpperCase().replace(/\s/g,"");
+const prettyReg=r=>r.length===7?r.slice(0,4)+" "+r.slice(4):r;
+const UK_PHONE=/^(?:\+44|0)7\d{9}$|^(?:\+44|0)[1-3]\d{8,9}$/;
+
+/* Fill static text */
+document.title=BIZ.name+" | MOT, Servicing & Tyres";
+$("#fName").textContent=BIZ.name;$("#fAddr").textContent=BIZ.address;$("#cAddr").textContent=BIZ.address;
+$("#cTel").textContent=BIZ.phone;$("#cTel").href="tel:"+BIZ.phone.replace(/\s/g,"");
+$("#cMail").textContent=BIZ.email;$("#cMail").href="mailto:"+BIZ.email;
+const hrs=[1,2,3,4,5,6,0].map(d=>`<tr><td>${DAYS[d]}</td><td>${BIZ.hours[d]?BIZ.hours[d][0]+" – "+BIZ.hours[d][1]:"Closed"}</td></tr>`).join("");
+$("#hoursHome").innerHTML=hrs;$("#hoursContact").innerHTML=hrs;
+$("#svcTable").innerHTML=SERVICES.map(s=>`<tr><td>${s.name}</td><td>${gbp(s.price)}</td></tr>`).join("");
+document.querySelectorAll("[data-price]").forEach(e=>e.textContent=gbp(PRICES[e.dataset.price]));
+document.querySelectorAll("[data-v]").forEach(e=>e.textContent=PRICES[e.dataset.v]);
+$("#serviceCards").innerHTML=SERVICES.filter(s=>s.desc).map(s=>`<div class="card rv"><h3>${s.name}</h3><p>${s.desc}</p><div class="price">${gbp(s.price)}</div></div>`).join("");
+$("#bSvc").innerHTML=SERVICES.map(s=>`<option value="${s.id}">${s.name} – ${gbp(s.price)}</option>`).join("");
+$("#fitNote").textContent=`Prices shown are fitted: fitting ${gbp(PRICES.fit)} and balancing ${gbp(PRICES.balance)} per tyre are included in the price. Stock updates when you edit the list in the code.`;
+
+/* Simple page router using the URL hash */
+const PAGES=["home","about","services","mot","tyres","book","contact"];
+function route(){
+  let h=(location.hash||"#home").slice(1); if(!PAGES.includes(h))h="home";
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+h));
+  document.querySelectorAll("nav a.l").forEach(a=>a.classList.toggle("cur",a.getAttribute("href")==="#"+h));
+  $("#menu").classList.remove("open");window.scrollTo(0,0);observe();
+}
+addEventListener("hashchange",route);
+$("#burger").onclick=()=>{const o=$("#menu").classList.toggle("open");$("#burger").setAttribute("aria-expanded",o)};
+
+/* Fade and slide in on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+function observe(){document.querySelectorAll(".page.on .rv:not(.in)").forEach(el=>io.observe(el))}
+
+/* Parallax on the hero background (fixed attachment is disabled on touch devices, so we nudge position) */
+addEventListener("scroll",()=>{const h=$(".hero");if(h&&!matchMedia("(prefers-reduced-motion:reduce)").matches)h.style.backgroundPosition="center "+(scrollY*.35)+"px"},{passive:true});
+
+/* Hero reg box starts a booking */
+$("#heroGo").onclick=()=>{sessionStorage.setItem("reg",$("#heroReg").value);location.hash="#book"};
+
+/* Tyre search */
+function showTyres(list){
+  $("#tBody").innerHTML=list.length?list.map(t=>`<tr><td>${t.brand}: ${t.model}</td><td>${t.size}</td><td>${t.stock>0?(t.stock>4?"In stock":"Only "+t.stock+" left"):"Order in (2 days)"}</td><td>${gbp(t.price+PRICES.fit+PRICES.balance)}</td></tr>`).join(""):`<tr><td colspan="4">No tyres found. Call us on ${BIZ.phone}.</td></tr>`;
+}
+showTyres(TYRES);
+$("#tGo").onclick=()=>{
+  const m=$("#tMsg");m.style.display="none";m.classList.remove("err");
+  let size=$("#tSize").value.toUpperCase().replace(/\s/g,"");
+  const reg=cleanReg($("#tReg").value);
+  if(!size&&reg){
+    if(!REG_RE.test(reg)){m.textContent="That registration doesn't look right. Check it and try again.";m.classList.add("err");m.style.display="block";return}
+    size=REG_SIZES[reg]||"";
+    if(!size){m.textContent="We can't find the size for that registration yet. Enter the size from your tyre sidewall instead.";m.classList.add("err");m.style.display="block";return}
+    m.textContent="Showing size "+size+" for "+prettyReg(reg);m.style.display="block";
+  }
+  size=size.replace(/^(\d{3})\/?(\d{2})R?(\d{2})$/,"$1/$2R$3");
+  showTyres(size?TYRES.filter(t=>t.size===size):TYRES);
+};
+
+/* ---------- Booking: availability stored locally (swap for BIZ.bookingEndpoint when you have a UK server) ---------- */
+const load=()=>{try{return JSON.parse(localStorage.getItem("bookings")||"[]")}catch(e){return[]}};
+const save=b=>{try{localStorage.setItem("bookings",JSON.stringify(b))}catch(e){}};
+let chosen="";
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+$("#bDate").min=iso(new Date());
+function slotList(date){
+  const h=BIZ.hours[date.getDay()]; if(!h)return[];
+  const toM=t=>+t.slice(0,2)*60+ +t.slice(3), out=[];
+  for(let m=toM(h[0]);m+BIZ.slotMinutes<=toM(h[1]);m+=BIZ.slotMinutes)out.push(String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0"));
+  return out;
+}
+function drawSlots(){
+  chosen="";const v=$("#bDate").value, box=$("#slots");
+  if(!v){box.innerHTML='<span style="color:var(--mute)">Choose a date to see free times.</span>';return}
+  const d=new Date(v+"T12:00"), list=slotList(d), taken=load().filter(b=>b.date===v);
+  const now=new Date();
+  if(!list.length){box.innerHTML="<span>We are closed that day. Please choose another date.</span>";return}
+  box.innerHTML=list.map(t=>{
+    const full=taken.filter(b=>b.time===t).length>=BIZ.bays;
+    const past=v===iso(now)&&new Date(v+"T"+t)<now;
+    return `<button type="button" class="slot" data-t="${t}" ${full||past?"disabled":""}>${t}</button>`}).join("");
+  box.querySelectorAll(".slot:not(:disabled)").forEach(b=>b.onclick=()=>{chosen=b.dataset.t;box.querySelectorAll(".slot").forEach(x=>x.classList.toggle("sel",x===b))});
+}
+$("#bDate").onchange=drawSlots;
+
+$("#bf").onsubmit=async e=>{
+  e.preventDefault();const m=$("#bMsg");m.className="msg err";m.style.display="block";
+  const reg=cleanReg($("#bReg").value),phone=$("#bPhone").value.replace(/\s/g,""),email=$("#bEmail").value.trim(),name=$("#bName").value.trim();
+  if(!$("#bDate").value||!chosen)return m.textContent="Choose a date and a time.";
+  if(!REG_RE.test(reg))return m.textContent="Enter a valid UK registration, for example AB12 CDE.";
+  if(name.length<2)return m.textContent="Enter your full name.";
+  if(!UK_PHONE.test(phone))return m.textContent="Enter a UK phone number, for example 07123 456789.";
+  if(!/^\S+@\S+\.\S+$/.test(email))return m.textContent="Enter a valid email address.";
+  const svc=SERVICES.find(s=>s.id===$("#bSvc").value), date=new Date($("#bDate").value+"T12:00");
+  const b={ref:"BK"+Date.now().toString(36).toUpperCase().slice(-6),date:$("#bDate").value,time:chosen,service:svc.name,price:svc.price,reg,name,phone,email};
+  if(load().filter(x=>x.date===b.date&&x.time===b.time).length>=BIZ.bays){drawSlots();return m.textContent="Sorry, that time was just taken. Choose another."}
+  if(BIZ.bookingEndpoint){
+    try{const r=await fetch(BIZ.bookingEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});if(!r.ok)throw 0}
+    catch(x){return m.textContent="We couldn't save your booking. Please call "+BIZ.phone+"."}
+  }
+  const all=load();all.push(b);save(all);
+  const body=`Booking ${b.ref}\n${b.service} (${gbp(b.price)})\n${fmtDate(date)} at ${b.time}\nVehicle: ${prettyReg(reg)}\n${BIZ.name}, ${BIZ.address}`;
+  m.className="msg";
+  m.innerHTML=`<b>Booked. Your reference is ${b.ref}.</b><br>${b.service}, ${fmtDate(date)} at ${b.time}, ${prettyReg(reg)}.<br>`+
+    (BIZ.bookingEndpoint?"A confirmation email is on its way.":`<a href="mailto:${email}?subject=${encodeURIComponent("Booking confirmation "+b.ref)}&body=${encodeURIComponent(body)}">Email yourself this confirmation</a>`);
+  $("#bf").reset();chosen="";drawSlots();
+};
+
+/* Enquiry form: opens the visitor's email app addressed to you. Swap for your own UK-hosted endpoint if you prefer. */
+$("#cf").onsubmit=e=>{
+  e.preventDefault();const m=$("#cMsg");m.style.display="block";
+  if(!$("#eName").value||!/^\S+@\S+\.\S+$/.test($("#eMail").value)||!$("#eMsg").value){m.className="msg err";return m.textContent="Fill in your name, a valid email and a message."}
+  m.className="msg";m.textContent="Opening your email app to send the enquiry.";
+  location.href=`mailto:${BIZ.email}?subject=${encodeURIComponent("Website enquiry from "+$("#eName").value)}&body=${encodeURIComponent($("#eMsg").value+"\n\nReply to: "+$("#eMail").value)}`;
+};
+
+/* Pre-fill reg from the home page box */
+addEventListener("hashchange",()=>{if(location.hash==="#book"){const r=sessionStorage.getItem("reg");if(r)$("#bReg").value=r}});
+route();
+</script>
+</body>
+</html>
